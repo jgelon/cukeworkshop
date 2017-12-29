@@ -28,3 +28,9 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.2.0'
     compile group: 'com.github.javafaker', name: 'javafaker', version: '0.14'
 }
+
+test {
+    reports {
+        html.enabled = false
+    }
+}
