@@ -1,5 +1,8 @@
 package cuke.common.testutil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import static java.lang.System.getProperty;
@@ -11,6 +14,7 @@ import java.net.UnknownHostException;
  */
 public class Environment {
 
+    private static final Logger logger = LoggerFactory.getLogger(Environment.class);
     public static boolean isWindows() {
         return System.getProperty("os.name").contains("Windows");
     }
@@ -20,7 +24,7 @@ public class Environment {
         try {
             computerName = InetAddress.getLocalHost().getHostName();
         } catch (UnknownHostException e) {
-            System.out.println("Could not determine computer name");
+            logger.info("Could not determine computer name");
             computerName = "UNKNOWN";
         }
         return computerName;

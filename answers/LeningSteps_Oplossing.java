@@ -10,7 +10,7 @@ public class LeningSteps {
 
     @Gegeven("^de klant wil informatie over een lening$")
     public void deKlantWilInformatieOverEenLening() {
-        LeningImpl.gaNaarCukeWorkshopPagina();
+        LeningImpl.gaNaarBddWorkshopPagina();
     }
 
     @Als("^de klant een lening wil voor \"([^\"]*)\"$")
@@ -40,7 +40,7 @@ public class LeningSteps {
 
     @Gegeven("^de klant heeft gekozen voor een lening$")
     public void deKlantHeeftGekozenVoorEenLening() {
-        LeningImpl.gaNaarCukeWorkshopPagina();
+        LeningImpl.gaNaarBddWorkshopPagina();
         LeningImpl.vulLeningtypeEnBedragIn("Flitskrediet", "300");
         LeningImpl.klikOpKnopInLeningAanvragen("Ga verder naar toelichting");
     }
@@ -61,12 +61,12 @@ public class LeningSteps {
 
     @Gegeven("^de klant heeft een leningkeuze gemaakt$")
     public void deKlantHeeftEenLeningkeuzeGemaakt() throws Throwable {
-        LeningImpl.gaNaarCukeWorkshopPagina();
+        LeningImpl.gaNaarBddWorkshopPagina();
     }
 
     @Als("^de klant kiest voor een \"([^\"]*)\" van \"([^\"]*)\" euro$")
     public void deKlantKiestVoorEenVanEuro(String leningtype, String bedrag) {
-        LeningImpl.gaNaarCukeWorkshopPagina();
+        LeningImpl.gaNaarBddWorkshopPagina();
         LeningImpl.vulLeningtypeEnBedragIn(leningtype, bedrag);
     }
 }

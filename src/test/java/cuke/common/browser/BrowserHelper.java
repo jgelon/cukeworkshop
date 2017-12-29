@@ -12,6 +12,8 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.util.List;
@@ -27,6 +29,7 @@ import static org.junit.Assert.fail;
  * Op dit niveau wordt selenium webdriver gestart en wordt de basisinteractie met de browser geregeld.
  */
 public class BrowserHelper {
+    private static final Logger logger = LoggerFactory.getLogger(BrowserHelper.class);
     private static WebDriver webDriver;
     private static WebDriverWait webDriverWait;
     private static String browserType;
@@ -71,7 +74,7 @@ public class BrowserHelper {
                 webDriver = new HtmlUnitDriver();
                 break;
             default:
-                System.out.println("Geen browser opgegeven, Chrome wordt als standaard browser gestart.");
+                logger.warn("Geen browser opgegeven, Chrome wordt als standaard browser gestart.");
                 System.setProperty("webdriver.chrome.driver", driversLocatie + "chromedriver.exe");
                 webDriver = new ChromeDriver();
         }
@@ -126,5 +129,10 @@ public class BrowserHelper {
 
     public static void knopIsBeschikbaar(String knopId) {
         WebElementInteractie.controleerKnopBeschikbaarheid("metId", knopId, true);
+    }
+
+    public static void stopDriver(){
+        logger.info("Driver '{}' wordt afgesloten", webDriver.getClass().getSimpleName());
+        webDriver.close();
     }
 }

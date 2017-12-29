@@ -63,9 +63,9 @@
     <form role="form" name="form2" novalidate>
       <div class="form-group">
         <input type="radio" name="kennis" value="ja" id="kennis_ja" ng-model="kennis"/>
-        <label for="ja">Ik heb kennis en ervaring met lenen.</label><br/>
+        <label for="kennis_ja">Ik heb kennis en ervaring met lenen.</label><br/>
         <input type="radio" name="kennis" value="nee" id="kennis_nee" ng-model="kennis"/>
-        <label for="nee">Ik heb geen kennis of ervaring met lenen.</label><br/>
+        <label for="kennis_nee">Ik heb geen kennis of ervaring met lenen.</label><br/>
       </div>
     </form>
     <div ng-hide="kennis!='nee'" id="leningtoelichting">
@@ -200,7 +200,7 @@
   </div>
 
   <div ng-hide="page!=6">
-    <h2 id="bedanktvooraanvraag">Bedankt voor uw aanvraag!</h2>
+    <h2 id="bedanktvooraanvraag">Bedankt voor uw aanvraag {{naam}}!</h2>
       <p></p>
   </div>
 </div>

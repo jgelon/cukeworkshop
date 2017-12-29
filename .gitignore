@@ -3,5 +3,6 @@
 /target/
 /lib
 /build/
+/out/
 /.gradle/
 /gradle/

@@ -1,6 +1,8 @@
 package cuke.common.testutil;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.List;
@@ -13,6 +15,8 @@ import static org.junit.Assert.fail;
  * Created on 1/17/2017.
  */
 public class BestandHelper {
+
+    private static final Logger logger = LoggerFactory.getLogger(BestandHelper.class);
 
     /**
      * Met deze methode wordt een bestand uit de testfiles folder (of subfolder) uitgelezen en in een string gezet.
@@ -52,7 +56,7 @@ public class BestandHelper {
         try {
             currentPath = new File(".").getCanonicalPath();
         } catch (IOException e) {
-            System.out.println("Could not open current path.");
+            logger.info("Could not open current path.");
         }
         return currentPath;
     }

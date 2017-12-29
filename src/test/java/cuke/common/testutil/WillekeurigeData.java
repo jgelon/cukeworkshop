@@ -1,11 +1,21 @@
 package cuke.common.testutil;
 
+import com.github.javafaker.Faker;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Locale;
+
 import static junit.framework.TestCase.fail;
 
 /**
  * Created on 1/12/2017.
  */
 public class WillekeurigeData {
+
+    private static final Logger logger = LoggerFactory.getLogger(WillekeurigeData.class);
+
+    private static final Faker faker = new Faker(new Locale("nl"));
 
     /**
      * Een methode om een x aantal willekeurige getallen te genereren. Het eerste getal is nooit 0.
@@ -14,23 +24,11 @@ public class WillekeurigeData {
      * @return het x aantal gewenste willekeurige getallen
      */
     public static String willekeurigeGetallen(int aantalGetallen) {
-        double doubleGetal;
-        int intGetal;
-        String strGetallen = null;
-        for (int i = 0; i < aantalGetallen; i++) {
-            doubleGetal = 9 * Math.random();
-            intGetal = (int) doubleGetal;
-            if (strGetallen == null) {
-                while (intGetal == 0) { //Eerste cijfer mag niet 0 zijn
-                    doubleGetal = 9 * Math.random();
-                    intGetal = (int) doubleGetal;
-                }
-                strGetallen = "" + intGetal;
-            } else {
-                strGetallen = strGetallen + intGetal;
-            }
-        }
-        return strGetallen;
+        return faker.number().digits(aantalGetallen);
+    }
+
+    public static String willekeurigeNaam() {
+        return faker.lordOfTheRings().character();
     }
 
     /**
@@ -58,7 +56,7 @@ public class WillekeurigeData {
      */
     public static int willekeurigGetalTussen(int min, int max) {
         if (min > max) {
-            System.out.println(String.format("Het gewenste willekeurige getal zal niet tussen het minimum %d en maximum %d liggen, want het minimum is groter dan het maximum.", min, max));
+            logger.info(String.format("Het gewenste willekeurige getal zal niet tussen het minimum %d en maximum %d liggen, want het minimum is groter dan het maximum.", min, max));
         }
         return min + (int) (Math.random() * ((max - min) + 1));
     }

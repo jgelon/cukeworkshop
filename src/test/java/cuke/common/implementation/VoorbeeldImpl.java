@@ -2,6 +2,8 @@ package cuke.common.implementation;
 
 import cuke.common.browser.BrowserHelper;
 import cuke.common.model.Lening;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -10,16 +12,18 @@ import java.util.List;
  */
 public class VoorbeeldImpl {
 
+    private static final Logger logger = LoggerFactory.getLogger(VoorbeeldImpl.class);
+
     public static void printEenGegevensVanEenLeningLijst(List<Lening> leningen) {
         for (Lening lening : leningen) {
-            System.out.println("Leningtype: " + lening.getLeningtype());
-            System.out.println("Leenbedrag: " + lening.getBedrag());
+            logger.info("Leningtype: " + lening.getLeningtype());
+            logger.info("Leenbedrag: " + lening.getBedrag());
         }
     }
 
     public static void printString(String var) {
-        System.out.println("De variabele wordt nu geprint:\n");
-        System.out.println(var);
+        logger.info("De variabele wordt nu geprint:\n");
+        logger.info(var);
     }
 
     public static void startBrowserMetUrl(String url) {

@@ -2,6 +2,8 @@ package cuke.common;
 
 import cuke.common.testutil.Environment;
 import cuke.common.testutil.PropertiesHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
@@ -9,6 +11,8 @@ import java.util.Properties;
  * Created on 09-01-2017.
  */
 public abstract class OmgevingConfig {
+
+    private static final Logger logger = LoggerFactory.getLogger(OmgevingConfig.class);
 
     private static String omgeving;
     private static String browser;
@@ -32,7 +36,7 @@ public abstract class OmgevingConfig {
         // Nu is de omgeving nog altijd de computernaam.
         // Deze kan anders geprogrammeerd worden, door bijv. in een properties bestand een computernaam een omgeving te geven.
         // Gebruik hiervoor PropertiesHelper.loadPropertiesNoEnv in testutil
-        System.out.println("Computernaam is: " + Environment.getComputerName() + ", dan is de omgeving: " + omgeving);
+        logger.info("Computernaam is: " + computernaam + ", dan is de omgeving: " + omgeving);
     }
 
     private static void bepaalBrowser() {
