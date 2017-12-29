@@ -12,11 +12,7 @@ import java.net.UnknownHostException;
 public class Environment {
 
     public static boolean isWindows() {
-        if (System.getProperty("os.name").indexOf("Windows") == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return System.getProperty("os.name").contains("Windows");
     }
 
     public static String getComputerName() {

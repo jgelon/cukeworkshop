@@ -1,9 +1,5 @@
 package cuke.common.testutil;
 
-import cucumber.api.DataTable;
-
-import java.util.List;
-
 /**
  * Created on 09-01-2017.
  */
