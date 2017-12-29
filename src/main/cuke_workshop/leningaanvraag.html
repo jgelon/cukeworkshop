@@ -22,23 +22,23 @@
     <h3 id="watvoorlening">Wat voor lening wilt u?</h3>
     <form role="form" name="myform" novalidate>
       <div class="form-group">
-        <td><input type="radio" name="typelening" value="Flitskrediet" id="flits" required ng-model="typelening"/>
+        <input type="radio" name="typelening" value="Flitskrediet" id="flits" required ng-model="typelening"/>
           <label for="flits">Flitskrediet (minimaal 300 euro)</label><br/>
-        <td><input type="radio" name="typelening" value="Persoonlijk" id="pers" ng-model="typelening"/>
+        <input type="radio" name="typelening" value="Persoonlijk" id="pers" ng-model="typelening"/>
           <label for="pers">Persoonlijke lening (minimaal 1.500 euro) </label><br/>
-        <td><input type="radio" name="typelening" value="Doorlopend" id="door" ng-model="typelening"/>
+        <input type="radio" name="typelening" value="Doorlopend" id="door" ng-model="typelening"/>
           <label for="door">Doorlopend krediet (minimaal 2.500 euro)</label><br/>
-        <td><input type="radio" name="typelening" value="Autolening" id="auto" ng-model="typelening"/>
+        <input type="radio" name="typelening" value="Autolening" id="auto" ng-model="typelening"/>
           <label for="auto">Autolening (minimaal 2.000 euro)</label><br/>
-        <td><input type="radio" name="typelening" value="WOZ-krediet" id="woz" ng-model="typelening"/>
+        <input type="radio" name="typelening" value="WOZ-krediet" id="woz" ng-model="typelening"/>
           <label for="woz">WOZ-krediet (minimaal 10.000 euro)</label><br/>
-        <td><input type="radio" name="typelening" value="Hypotheek" id="hypo" ng-model="typelening"/>
+        <input type="radio" name="typelening" value="Hypotheek" id="hypo" ng-model="typelening"/>
           <label for="hypo">Hypotheek (minimaal 50.000 euro)</label><br/>
       </div>
       <h3 id="hoeveellenen">Hoeveel wilt u lenen?</h3>
       <div class="form-group">
         <label for="amount">Te lenen bedrag</label>
-        <td><input type="number" min="0" max="1000000" name="amount" id="amount" placeholder="Leenbedrag in euro's" ng-model="amount"/>
+        <input type="number" min="0" max="1000000" name="amount" id="amount" placeholder="Leenbedrag in euro's" ng-model="amount"/>
           <span ng-show="myform.amount.$dirty && amount<minlening[typelening]" class="alert-danger" id="minleningtekst">De hoogte van de gewenste lening is lager dan het minimale bedrag ({{minlening[typelening]}}) van de geselecteerde lening. Kies eventueel een ander type lening.</span>
       </div>
 
@@ -70,7 +70,7 @@
     </form>
     <div ng-hide="kennis!='nee'" id="leningtoelichting">
       Het is niet in alle gevallen voordelig om een lening af te sluiten. Kijk goed bij de nieuwe lening welke voorwaarden en rente van toepassing is. Let er ook op hoe lang de rente geldig is die jou wordt aangeboden. Soms geldt een rente slechts voor een beperkte tijd. Verder kunnen de maandlasten van een lening lager lijken, omdat minder of helemaal niet meer wordt afgelost op de lening. De lening moet dan wel in de toekomst worden afgelost, terwijl dat misschien niet goed uitkomt. Bijvoorbeeld omdat er minder inkomsten zijn door pensionering. Denk rustig na over het aanbod en vraag uitleg als je iets niet begrijpt.
-      <p/>
+        <p></p>
     </div>
     <button class="btn btn-default" ng-click="page='1';submit()" id="terugPage2">Ga terug naar aanvraag</button>
     <button class="btn btn-default" ng-click="page='3'" ng-disabled="kennis==null" id="verderPage2">Ga verder naar persoonsgegevens</button>
@@ -176,7 +176,7 @@
       <tr><td>Type inkomen: </td><td id="result_typeinkomen">{{typeinkomen}}<td></tr>
     </table>
     <div>
-      <p/>
+        <p></p>
     </div>
     <button class="btn btn-default" ng-click="page='3'" id="terugPage4">Ga terug naar persoonsgegevens</button>
     <button class="btn btn-default" ng-click="page='5'" id="verderPage4">Ga verder naar enquete</button>
@@ -201,7 +201,7 @@
 
   <div ng-hide="page!=6">
     <h2 id="bedanktvooraanvraag">Bedankt voor uw aanvraag!</h2>
-    <p/>
+      <p></p>
   </div>
 </div>
 
