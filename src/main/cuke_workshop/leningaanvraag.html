@@ -62,9 +62,9 @@
     </table>
     <form role="form" name="form2" novalidate>
       <div class="form-group">
-        <input type="radio" name="kennis" value="ja" id="ja" ng-model="kennis"/>
+        <input type="radio" name="kennis" value="ja" id="kennis_ja" ng-model="kennis"/>
         <label for="ja">Ik heb kennis en ervaring met lenen.</label><br/>
-        <input type="radio" name="kennis" value="nee" id="nee" ng-model="kennis"/>
+        <input type="radio" name="kennis" value="nee" id="kennis_nee" ng-model="kennis"/>
         <label for="nee">Ik heb geen kennis of ervaring met lenen.</label><br/>
       </div>
     </form>
@@ -105,13 +105,13 @@
             <td><input type="number" name="inkomen" id="inkomen" placeholder="uw bruto inkomen" ng-model="inkomen" required/>   </td><td><span ng-show = "form3.inkomen.$error.required && showErrors">Verplicht</span></td></tr>
           <tr><td><label for="woonlasten">woonlasten</label></td>
             <td><input type="number" name="woonlasten" id="woonlasten" placeholder="uw woonlasten" ng-model="woonlasten" required/>  </td><td><span ng-show = "form3.woonlasten.$error.required && showErrors">Verplicht</span></td></tr>
-          <tr><td><label for"woonsituatie">woonsituatie</label></td>
+          <tr><td><label for="woonsituatie">woonsituatie</label></td>
             <td><select name="woonsituatie" ng-model="woonsituatie" id="woonsituatie" required>
               <option value="koophuis">koophuis</option>
               <option value="huurhuis">huurhuis</option>
               <option value="inwonend">inwonend</option>
             </select></td><td><span ng-show = "form3.woonsituatie.$error.required && showErrors">Verplicht</span></td></tr>
-          <tr><td><label for"staat">burgerlijke staat</label></td>
+          <tr><td><label for="staat">burgerlijke staat</label></td>
             <td><select name="staat" ng-model="staat" id="staat" required>
               <option value="single">single</option>
               <option value="getrouwd">getrouwd</option>
@@ -133,7 +133,7 @@
           <tr ng-show="samen"><td><label for="geboortedatum">geboortedatum partner</label></td>
             <td><input type="date" name="geboortedatumpartner" id="geboortedatumpartner" placeholder="uw partners geboortedatum" ng-model="geboortedatumpartner" /> </td><td><span ng-show = "form3.geboortedatumpartner.$error.required && showErrors">Verplicht</span><span ng-show = "form3.geboortedatumpartner.$dirty && (age(geboortedatumpartner)<18 || age(geboortedatumpartner)>65)">Leeftijd moet tussen 18 en 65 liggen</span></td></tr>
 
-          <tr><td><label for"typeinkomen">type inkomen</label></td>
+          <tr><td><label for="typeinkomen">type inkomen</label></td>
             <td><select name="typeinkomen" ng-model="typeinkomen" id="typeinkomen" required>
               <option value="tijdelijk">tijdelijk</option>
               <option value="vast">vast</option>
@@ -141,15 +141,16 @@
               <option value="uitzendkracht">uitzendkracht</option>
               <option value="geen">geen inkomen</option>
             </select> </td><td><span ng-show = "form3.typeinkomen.$error.required && showErrors">Verplicht</span></td></tr>
-          <tr><td><label for"loonstrookje ">loonstrookje</label></td><td><input type="file" name="loonstrookje" accept="application/pdf,image/*"/></td></tr>
-          <tr><td><label for"id ">identiteitsbewijs</label></td><td><input type="file" name="id" accept="application/pdf,image/*"/></td></tr>
-          <tr ng-show="typeinkomen=='tijdelijk'||typeinkomen=='uitzendkracht'"><td><label for"intentieverklaring">intentieverklaring</label></td><td><input type="file" name="intentieverklaring" accept="application/pdf,image/*"/></td></tr>
+          <tr><td><label for="loonstrookje">loonstrookje</label></td><td><input type="file" name="loonstrookje" id="loonstrookje" accept="application/pdf,image/*"/></td></tr>
+          <tr><td><label for="id">identiteitsbewijs</label></td><td><input type="file" name="id" id="id" accept="application/pdf,image/*"/></td></tr>
+          <tr ng-show="typeinkomen=='tijdelijk'||typeinkomen=='uitzendkracht'"><td><label for="intentieverklaring">intentieverklaring</label></td><td><input type="file" name="intentieverklaring" id="intentieverklaring" accept="application/pdf,image/*"/></td></tr>
         </table>
 
         <button class="btn btn-default" ng-click="page='2'" id="terugPage3">Ga terug naar toelichting</button>
         <button class="btn btn-default" ng-click="form3.$valid ? page='4' : showErrors=form3.$error" id="verderPage3">Verstuur lening aanvraag</button>
 
       </div>
+    </form>
   </div>
 
   <div ng-hide="page!=4">
