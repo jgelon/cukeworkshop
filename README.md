@@ -19,6 +19,13 @@ Tip: het loonstrookje en identiteitsbewijs zijn niet verplicht.
 
 ## Opdracht 3
 Upload het loonstrookje. 
+
+## Opdracht 4 - Advanced
+Naast de leningaanvraag.html is er ook een leningaanvraagLIS.html. LIS staat voor Less Ideal Situation.
+In de originele opdracht wordt er gebruik gemaakt van ID's en ieder veld heeft een ID, in de echte wereld is dit echter 
+ideaal maar niet realistisch. De LIS is hier een voorbeeld van en je kan  de zelfde opdrachten gebruiken, maar dan op 
+deze website.
+
  
 
 # Handige tools

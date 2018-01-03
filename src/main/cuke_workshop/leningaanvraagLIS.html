@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Vraag een lening aan</title>
+  <title>Vraag een lening aan - Less Ideal Situation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -13,34 +13,34 @@
   <div ng-hide="page!=1">
     <h1 id="aanvraagscherm">Aanvraagscherm</h1>
     <h3 id="waarvoorlenen">Waarvoor hebt u een lening nodig?</h3>
-    <button ng-click="toggleModal('U kunt wellicht beter geen lening nemen als deze enkel voor boodschappen bedoeld is.')" class="btn btn-default" id="boodschappen">Boodschappen</button>
-    <button ng-click="toggleModal('U kunt wellicht beter geen lening nemen als deze enkel voor beleggingen bedoeld is.')" class="btn btn-default" id="beleggingen">Beleggingen</button>
-    <button ng-click="toggleModal('Waarschijnlijk is een Doorlopend krediet of een Persoonlijke lening de beste keus voor u.')" class="btn btn-default" id="rekeningen">Rekeningen betalen</button>
-    <button ng-click="toggleModal('Waarschijnlijk is een Flitskrediet of een Persoonlijke lening de beste keus voor u.')" class="btn btn-default" id="meubels">Meubels</button>
-    <button ng-click="toggleModal('Voor de aankoop van een auto is de Autolening de beste keus.')" class="btn btn-default" id="autoaankoop">Auto</button>
-    <button ng-click="toggleModal('Bij een verbouwing aan een huis is een Persoonlijke lening, Doorlopend krediet of WOZ-krediet de beste keus.')" class="btn btn-default" id="verbouwing">Verbouwing</button>
-    <button ng-click="toggleModal('Voor een huis is een Hypotheek de beste keus qua lening.')" class="btn btn-default" id="huis">Huis</button>
+    <button ng-click="toggleModal('U kunt wellicht beter geen lening nemen als deze enkel voor boodschappen bedoeld is.')" class="btn btn-default" name="boodschappen">Boodschappen</button>
+    <button ng-click="toggleModal('U kunt wellicht beter geen lening nemen als deze enkel voor beleggingen bedoeld is.')" class="btn btn-default" name="beleggingen">Beleggingen</button>
+    <button ng-click="toggleModal('Waarschijnlijk is een Doorlopend krediet of een Persoonlijke lening de beste keus voor u.')" class="btn btn-default" name="rekeningen">Rekeningen betalen</button>
+    <button ng-click="toggleModal('Waarschijnlijk is een Flitskrediet of een Persoonlijke lening de beste keus voor u.')" class="btn btn-default" name="meubels">Meubels</button>
+    <button ng-click="toggleModal('Voor de aankoop van een auto is de Autolening de beste keus.')" class="btn btn-default" name="autoaankoop">Auto</button>
+    <button ng-click="toggleModal('Bij een verbouwing aan een huis is een Persoonlijke lening, Doorlopend krediet of WOZ-krediet de beste keus.')" class="btn btn-default" name="verbouwing">Verbouwing</button>
+    <button ng-click="toggleModal('Voor een huis is een Hypotheek de beste keus qua lening.')" class="btn btn-default" name="huis">Huis</button>
     <h3 id="watvoorlening">Wat voor lening wilt u?</h3>
     <form role="form" name="myform" novalidate>
       <div class="form-group">
-        <input type="radio" name="typelening" value="Flitskrediet" id="flits" required ng-model="typelening"/>
-          <label for="flits">Flitskrediet (minimaal 300 euro)</label><br/>
-        <input type="radio" name="typelening" value="Persoonlijk" id="pers" ng-model="typelening"/>
-          <label for="pers">Persoonlijke lening (minimaal 1.500 euro) </label><br/>
-        <input type="radio" name="typelening" value="Doorlopend" id="door" ng-model="typelening"/>
-          <label for="door">Doorlopend krediet (minimaal 2.500 euro)</label><br/>
-        <input type="radio" name="typelening" value="Autolening" id="auto" ng-model="typelening"/>
-          <label for="auto">Autolening (minimaal 2.000 euro)</label><br/>
-        <input type="radio" name="typelening" value="WOZ-krediet" id="woz" ng-model="typelening"/>
-          <label for="woz">WOZ-krediet (minimaal 10.000 euro)</label><br/>
-        <input type="radio" name="typelening" value="Hypotheek" id="hypo" ng-model="typelening"/>
-          <label for="hypo">Hypotheek (minimaal 50.000 euro)</label><br/>
+        <input type="radio" name="typelening" value="Flitskrediet" required ng-model="typelening"/>
+          Flitskrediet (minimaal 300 euro)<br/>
+        <input type="radio" name="typelening" value="Persoonlijk" ng-model="typelening"/>
+          Persoonlijke lening (minimaal 1.500 euro) <br/>
+        <input type="radio" name="typelening" value="Doorlopend" ng-model="typelening"/>
+          Doorlopend krediet (minimaal 2.500 euro)<br/>
+        <input type="radio" name="typelening" value="Autolening" ng-model="typelening"/>
+          Autolening (minimaal 2.000 euro)<br/>
+        <input type="radio" name="typelening" value="WOZ-krediet" ng-model="typelening"/>
+          WOZ-krediet (minimaal 10.000 euro)<br/>
+        <input type="radio" name="typelening" value="Hypotheek" ng-model="typelening"/>
+          Hypotheek (minimaal 50.000 euro)<br/>
       </div>
       <h3 id="hoeveellenen">Hoeveel wilt u lenen?</h3>
       <div class="form-group">
-        <label for="amount">Te lenen bedrag</label>
-        <input type="number" min="0" max="1000000" name="amount" id="amount" placeholder="Leenbedrag in euro's" ng-model="amount"/>
-          <span ng-show="myform.amount.$dirty && amount<minlening[typelening]" class="alert-danger" id="minleningtekst">De hoogte van de gewenste lening is lager dan het minimale bedrag ({{minlening[typelening]}}) van de geselecteerde lening. Kies eventueel een ander type lening.</span>
+        Te lenen bedrag
+        <input type="number" min="0" max="1000000" name="amount" placeholder="Leenbedrag in euro's" ng-model="amount"/>
+          <span ng-show="myform.amount.$dirty && amount<minlening[typelening]" class="alert-danger">De hoogte van de gewenste lening is lager dan het minimale bedrag ({{minlening[typelening]}}) van de geselecteerde lening. Kies eventueel een ander type lening.</span>
       </div>
 
       <button class="btn btn-default" ng-disabled="typelening==null || amount==null || amount<minlening[typelening]" ng-click="page='2';submit()" id="verderPage1">Ga verder naar toelichting</button>
