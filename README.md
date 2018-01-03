@@ -20,3 +20,6 @@ Tip: het loonstrookje en identiteitsbewijs zijn niet verplicht.
 ## Opdracht 3
 Upload het loonstrookje. 
  
+
+# Handige tools
+Google chrome met Inspect Element. Een handige plugin is "CSS Selector Helper for Chrome"
