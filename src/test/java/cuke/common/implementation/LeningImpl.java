@@ -85,6 +85,11 @@ public class LeningImpl {
         BrowserHelper.controleerAanwezigheidVanTekstMetXpath(xpathString);
     }
 
+    public static void controleerKopOpPagina(String kopTekst) {
+        String xpathString = String.format("//h2[text()='%s']", kopTekst);
+        BrowserHelper.controleerAanwezigheidVanTekstMetXpath(xpathString);
+    }
+
     private static String haalKnopIdVoorKnopnaam(String knopnaam) {
         Properties knopIds = PropertiesHelper.loadProperties("knopnamenNaarId");
         String knopnaamMetUnderscores = knopnaam.replace(" ", "_");
