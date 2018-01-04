@@ -68,7 +68,7 @@ class WebElementInteractie {
 
     static void vulStandaardWebelementMetWaarde(WebElement veld, String waarde) {
         int aantalKeerProberen = 1;
-        while (!veld.getAttribute("value").equals(waarde) && aantalKeerProberen > 0) {
+        while (!veld.getAttribute("value").equals(waarde) || aantalKeerProberen > 0) {
             veld.clear();
             veld.sendKeys(waarde);
             aantalKeerProberen--;
