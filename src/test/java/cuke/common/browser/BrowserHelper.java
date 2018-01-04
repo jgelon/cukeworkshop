@@ -97,6 +97,10 @@ public class BrowserHelper {
         WebElementInteractie.selecteerRadiobutton("metTekst", radioButtonTekst);
     }
 
+    public static void selecteerDropdownWaarde(String selectId, String waarde) {
+        WebElementInteractie.selecteerInSelectieElement("metId", selectId, waarde);
+    }
+
     public static void vulVeldMetTekst(String veldTekst, String waarde) {
         WebElementInteractie.vulInputVeldMetWaarde("metTekst", veldTekst, waarde);
     }

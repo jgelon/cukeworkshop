@@ -50,8 +50,25 @@ class WebElementInteractie {
     }
 
     static void vulWebElementVeldMetWaarde(WebElement veld, String waarde) {
+        String inputType = veld.getAttribute("type");
+        if (inputType.equals("date")) {
+            vulDatumWebelementMetWaarde(veld, waarde);
+        } else {
+            vulStandaardWebelementMetWaarde(veld, waarde);
+        }
+    }
+
+    /**
+     * Velden met het type 'date', staan de optie clear niet toe. Ook wordt de tekst aangepast naar een ander tijdformaat.
+     * Hierdoor gaat de standaard assertion of het veld goed is ingevuld fout.
+     */
+    static void vulDatumWebelementMetWaarde(WebElement veld, String waarde) {
+        veld.sendKeys(waarde);
+    }
+
+    static void vulStandaardWebelementMetWaarde(WebElement veld, String waarde) {
         int aantalKeerProberen = 1;
-        while (!veld.getAttribute("value").equals(waarde) || aantalKeerProberen > 0) {
+        while (!veld.getAttribute("value").equals(waarde) && aantalKeerProberen > 0) {
             veld.clear();
             veld.sendKeys(waarde);
             aantalKeerProberen--;

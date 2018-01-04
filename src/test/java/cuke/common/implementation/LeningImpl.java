@@ -53,6 +53,15 @@ public class LeningImpl {
         BrowserHelper.selecteerRadiobutton(tekstVanOptie);
     }
 
+    /**
+     * Selecteer een dropdown optie
+     * @param selectId id van de select tag
+     * @param waarde te selecteren waarde
+     */
+    public static void selecteerDropdownOptie(String selectId, String waarde){
+        BrowserHelper.selecteerDropdownWaarde(selectId, waarde);
+    }
+
     public static void controleerBeschikbaarheidKnopInLeningAanvragen(String knopnaam) {
         String knopId = haalKnopIdVoorKnopnaam(knopnaam);
         BrowserHelper.knopIsBeschikbaar(knopId);
